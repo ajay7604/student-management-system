@@ -1,0 +1,3 @@
+--INSERT INTO student (id, name, email, department) VALUES (1, 'John Doe', 'john@example.com', 'Computer Science');
+--INSERT INTO courses (id, title, code, credits) VALUES (1, 'Spring Boot Basics', 'CS101', 3);
+--INSERT INTO enrollment (id, student_id, course_id) VALUES (1, 1, 1);
