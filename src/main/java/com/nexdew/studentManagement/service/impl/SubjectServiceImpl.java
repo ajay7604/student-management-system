@@ -18,8 +18,7 @@ public class SubjectServiceImpl implements SubjectService {
     @Autowired
     private StudentRepository studentRepository;
     @Override
-    public List<Subject> createSubject(List<Subject> subjects) {
-
-        return subjectRepository.saveAll(subjects);
+    public Subject createSubject(Subject subjects) {
+        return subjectRepository.save(subjects);
     }
 }

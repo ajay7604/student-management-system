@@ -22,8 +22,10 @@ public class SubjectController {
     private SubjectService subjectService;
 
     @PostMapping("/create")
-    public ResponseEntity<List<Subject>> createSubject(@RequestBody List<Subject> subjects) {
-        List<Subject> createdSubject = subjectService.createSubject(subjects);
+    public ResponseEntity<Subject> createSubject(@RequestBody Subject subjects) {
+        Subject createdSubject = subjectService.createSubject(subjects);
         return ResponseEntity.ok(createdSubject);
     }
+
 }
+
