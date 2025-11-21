@@ -1,6 +1,5 @@
 package com.nexdew.studentManagement.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,9 +31,5 @@ public class Courses {
     private List<Enrollment> enrollments;
 
 
-    public void addSubject(Subject subject) {
-        subject.setCourse(this);
-        this.subjects.add(subject);
-    }
 
 }

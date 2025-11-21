@@ -56,6 +56,7 @@ public class StudentServiceImpl implements StudentService {
                 .orElseThrow(() -> new RuntimeException("Student not found"));
         studentRepository.deleteById(studentId);
         return true;
+
     }
 
     @Override

@@ -23,8 +23,6 @@ public interface StudentService {
     Students updateStudent(Long studentId, Students updatedStudent);
 
 
-   
-    
 
     List<Students> getStudentByAddressId(Long addressId);
 

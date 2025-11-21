@@ -20,7 +20,7 @@ public class Subject {
     private String subjects;
 
     @ManyToOne
-    @JoinColumn(name="course_Id")
+    @JoinColumn(name="course_id")
     @JsonIgnore
     private Courses course;
 

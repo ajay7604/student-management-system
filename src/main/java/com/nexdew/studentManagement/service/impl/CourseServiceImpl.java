@@ -25,6 +25,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Courses createCourse(Courses course) {
+
 //        for (Courses course : courses) {
 //            if (course.getSubjects() != null) {
 //                for (Subject subject : course.getSubjects()) {
@@ -32,12 +33,11 @@ public class CourseServiceImpl implements CourseService {
 //                }
 //            }
 //        }
+       // course.getSubjects().forEach(course::addSubject);
 
-
-        course.getSubjects().forEach(course::addSubject);
-
-
-
+        for(Subject subject : course.getSubjects()){
+            subject.setCourse(course);
+        }
         return courseRepository.save(course);
     }
 
@@ -65,6 +65,5 @@ public class CourseServiceImpl implements CourseService {
     public List<Courses> getAllCourses() {
         return courseRepository.findAll();
     }
-
 
 }
