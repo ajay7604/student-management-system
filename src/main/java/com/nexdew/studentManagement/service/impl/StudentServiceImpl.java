@@ -68,7 +68,7 @@ public class StudentServiceImpl implements StudentService {
         existingStudent.setEmail(updatedStudent.getEmail());
         existingStudent.setDepartment(updatedStudent.getDepartment());
 
-        return studentRepository.save(existingStudent);
+     return studentRepository.save(existingStudent);
 
     }
 

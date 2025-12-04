@@ -24,5 +24,5 @@ public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
     List<Courses> findCourseByStudentId(@Param("studentId") Long studentId);
 
 
-
+    Optional<Enrollment> findByStudentStudentId(Long studentId);
 }

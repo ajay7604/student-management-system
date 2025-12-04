@@ -22,4 +22,8 @@ public interface EnrollmentService {
 
 
     List<Courses> getAllCoursess(Long studentId);
+
+    String cancle(Long studentId);
+
+    String cancel(Long enrollmentId);
 }

@@ -98,6 +98,24 @@ public class EnrollmentServiceImpl  implements EnrollmentService {
         return courseByStudentId;
     }
 
+
+    @Override
+    public String cancel(Long enrollmentId) {
+        Enrollment enrollment = enrollmentRepository.findById(enrollmentId)
+                .orElseThrow(() -> new RuntimeException("Not Found: " + enrollmentId));
+        enrollmentRepository.delete(enrollment);
+        return "Enrollment Delete By Id: "+enrollmentId;
+    }
+
+    @Override
+    public String cancle(Long studentId) {
+        Enrollment enrollment = enrollmentRepository.findByStudentStudentId(studentId)
+                .orElseThrow(() -> new RuntimeException("student not found:" + studentId));
+        enrollmentRepository.delete(enrollment);
+        return "Enrollment Cancel By StudentId "+studentId;
+
+    }
+
 }
 
 
