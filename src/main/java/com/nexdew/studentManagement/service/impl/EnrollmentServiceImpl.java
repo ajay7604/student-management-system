@@ -32,7 +32,9 @@ public class EnrollmentServiceImpl  implements EnrollmentService {
     public List<Students> getStudentsByCourseId(Long courseId) {
 
         List<Students> studentsByCourseId = enrollmentRepository.findStudentsByCourseId(courseId);
+        // if(studentsByCourseId==null){
         if(studentsByCourseId.isEmpty()){
+
             throw new RuntimeException("No students found for the given course ID: " + courseId);
         }
         return studentsByCourseId;
@@ -113,6 +115,15 @@ public class EnrollmentServiceImpl  implements EnrollmentService {
                 .orElseThrow(() -> new RuntimeException("student not found:" + studentId));
         enrollmentRepository.delete(enrollment);
         return "Enrollment Cancel By StudentId "+studentId;
+
+    }
+
+    @Override
+    public String cancleEnroll(Long courseID) {
+        Enrollment enrollment = enrollmentRepository.findByCourseCourseID(courseID)
+                .orElseThrow(() -> new RuntimeException("student not found:" + courseID));
+        enrollmentRepository.delete(enrollment);
+        return "Enrollment Cancel By StudentId "+courseID;
 
     }
 

@@ -56,6 +56,22 @@ public class EnrollmentController {
         return ResponseEntity.ok(courses);
     }
 
+    @DeleteMapping("studentId/{studentId}")
+    public ResponseEntity<String> cancleByStudentId(@PathVariable Long studentId){
+        return ResponseEntity.ok(enrollmentService.cancle(studentId));
+    }
+
+
+    @DeleteMapping("enrollmentId/{enrollmentId}")
+    public ResponseEntity<String> cancelByEnrollmentId(@PathVariable Long enrollmentId){
+        return ResponseEntity.ok(enrollmentService.cancel(enrollmentId));
+    }
+
+    @DeleteMapping("courseID/{courseID}")
+    public ResponseEntity<String> cancleEnroll(@PathVariable Long courseID){
+        return ResponseEntity.ok(enrollmentService.cancleEnroll(courseID));
+    }
+
 }
 
 

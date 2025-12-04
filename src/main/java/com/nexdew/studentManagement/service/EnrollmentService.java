@@ -26,4 +26,6 @@ public interface EnrollmentService {
     String cancle(Long studentId);
 
     String cancel(Long enrollmentId);
+
+    String cancleEnroll(Long courseID);
 }
